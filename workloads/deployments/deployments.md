@@ -68,3 +68,11 @@ If we made some error and we want to go back to an older revision, we can do it 
 Adittionaly, we can specify the revision that we want to restore
 
     kubectl rollout undo deployment/nginx-deployment --to-revision=2
+
+## Annotations
+
+When we are modifying our resources directly without using an additional tool, we may want to annotate the changes that we are doing, in this case, Kubernetes does not do it automatically, so we have to set it manually. The way to do it is just running this command:
+
+    kubectl annotate deployment/nginx-deployment kubernetes.io/change-cause="First deployment"
+
+And we will have to run it every time that we make some changes directly in the Deployment, just changing the message.
