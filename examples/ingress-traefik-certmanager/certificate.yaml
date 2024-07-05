@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: test-atenea-cert
+  namespace: default
+spec:
+  secretName: test-atenea-cert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: test.atenea.lat
+  dnsNames:
+  - test.atenea.lat
