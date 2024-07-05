@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-atenea-lat
+  namespace: default
+spec:
+  secretName: wildcard-atenea-lat-tls
+  dnsNames:
+    - "atenea.lat"
+    - "*.atenea.lat"
+  issuerRef:
+    name: cloudflare-issuer
+    kind: Issuer
